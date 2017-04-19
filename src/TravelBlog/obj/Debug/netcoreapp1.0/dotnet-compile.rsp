@@ -1,5 +1,5 @@
---temp-output:C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\obj\Debug\netcoreapp1.0\
---out:C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\bin\Debug\netcoreapp1.0\TravelBlog.dll
+--temp-output:c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\obj\Debug\netcoreapp1.0\
+--out:c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\bin\Debug\netcoreapp1.0\TravelBlog.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -194,14 +194,15 @@
 --reference:C:\Users\epicodus\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\epicodus\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\obj\Debug\netcoreapp1.0\TravelBlogdotnet-compile.deps.json",TravelBlog.deps.json
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Program.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Startup.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\HomeController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Migrations\20170419162402_Initial.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Migrations\20170419162402_Initial.Designer.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Migrations\TravelBlogContextModelSnapshot.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Experience.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Location.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Person.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\TravelBlog\src\TravelBlog\Models\TravelBlogContext.cs
+--resource:"c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\obj\Debug\netcoreapp1.0\TravelBlogdotnet-compile.deps.json",TravelBlog.deps.json
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Program.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Startup.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\HomeController.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Controllers\LocationsController.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Migrations\20170419165859_Initial.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Migrations\20170419165859_Initial.Designer.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Migrations\TravelBlogContextModelSnapshot.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Experience.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Location.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Models\Person.cs
+c:\users\epicodus\documents\visual studio 2015\Projects\TravelBlog\src\TravelBlog\Models\TravelBlogContext.cs

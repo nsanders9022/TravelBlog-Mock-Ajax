@@ -24,6 +24,21 @@ namespace TravelBlog.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "People",
+                columns: table => new
+                {
+                    PersonId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ExperienceId = table.Column<int>(nullable: false),
+                    LocationId = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_People", x => x.PersonId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Experiences",
                 columns: table => new
                 {
@@ -54,6 +69,9 @@ namespace TravelBlog.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Experiences");
+
+            migrationBuilder.DropTable(
+                name: "People");
 
             migrationBuilder.DropTable(
                 name: "Locations");

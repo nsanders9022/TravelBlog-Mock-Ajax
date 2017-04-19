@@ -48,6 +48,22 @@ namespace TravelBlog.Migrations
                     b.ToTable("Locations");
                 });
 
+            modelBuilder.Entity("TravelBlog.Models.Person", b =>
+                {
+                    b.Property<int>("PersonId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ExperienceId");
+
+                    b.Property<int>("LocationId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("PersonId");
+
+                    b.ToTable("People");
+                });
+
             modelBuilder.Entity("TravelBlog.Models.Experience", b =>
                 {
                     b.HasOne("TravelBlog.Models.Location", "Location")

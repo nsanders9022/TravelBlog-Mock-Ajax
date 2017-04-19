@@ -8,7 +8,7 @@ using TravelBlog.Models;
 namespace TravelBlog.Migrations
 {
     [DbContext(typeof(TravelBlogContext))]
-    [Migration("20170419162402_Initial")]
+    [Migration("20170419165859_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,22 @@ namespace TravelBlog.Migrations
                     b.HasKey("LocationId");
 
                     b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("TravelBlog.Models.Person", b =>
+                {
+                    b.Property<int>("PersonId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ExperienceId");
+
+                    b.Property<int>("LocationId");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("PersonId");
+
+                    b.ToTable("People");
                 });
 
             modelBuilder.Entity("TravelBlog.Models.Experience", b =>
