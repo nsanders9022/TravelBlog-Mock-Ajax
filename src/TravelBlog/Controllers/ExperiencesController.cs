@@ -5,75 +5,69 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TravelBlog.Models;
 using Microsoft.EntityFrameworkCore;
-using TravelBlog.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Diagnostics;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TravelBlog.Controllers
 {
-    public class LocationsController : Controller
+    public class ExperiencesController : Controller
     {
         // GET: /<controller>/
-
         private TravelBlogContext db = new TravelBlogContext();
         public IActionResult Index()
         {
-            return View(db.Locations.ToList());
+            return View(db.Experiences.Include(experiences=> experiences.Location).ToList());
         }
 
         public IActionResult Details(int id)
         {
-            var thisLocation = db.Locations.Include(locations => locations.Experiences).FirstOrDefault(locations => locations.LocationId == id);
-            return View(thisLocation);
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            return View(thisExperience);
         }
 
         public IActionResult Create()
         {
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Location location)
+        public IActionResult Create(Experience experience)
         {
-            db.Locations.Add(location);
+            db.Experiences.Add(experience);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        //Edit Location
         public IActionResult Edit(int id)
         {
-            var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
-            return View(thisLocation);
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
+            return View(thisExperience);
         }
 
         [HttpPost]
-        public IActionResult Edit (Location location)
+        public IActionResult Edit(Experience experience)
         {
-            db.Entry(location).State = EntityState.Modified;
+            db.Entry(experience).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        //Delete Location
         public IActionResult Delete(int id)
         {
-            var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
-            return View(thisLocation);
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            return View(thisExperience);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var thisLocation = db.Locations.FirstOrDefault(locations => locations.LocationId == id);
-            db.Locations.Remove(thisLocation);
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            db.Experiences.Remove(thisExperience);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
-
     }
 }

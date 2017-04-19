@@ -11,4 +11,10 @@
     <hr />
     @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
     @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+<h2>Experiences at this location:</h2>
+@foreach (var experience in Model.Experiences)
+{
+    <h4>@experience.Title</h4>
+    <p>@experience.Description</p>
+}
     <p>@Html.ActionLink("Back to list", "Index")</p>
