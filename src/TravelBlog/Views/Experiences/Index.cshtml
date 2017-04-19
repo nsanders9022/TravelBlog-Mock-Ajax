@@ -7,11 +7,6 @@
 
 <h1> My Travel Blog</h1>
 <br />
-<div>
-    @Html.DisplayNameFor(model => model.Description)
-    
-</div>
-
 <table class="table">
     <tr>
         <th>
@@ -28,7 +23,7 @@
 {
     <tr>
         <td>
-            @Html.DisplayFor(modelExperience => listExperience.Description)
+            @Html.DisplayFor(modelExperience => listExperience.Title)
         </td>
         <td>
             @Html.DisplayFor(modelExperience => listExperience.Location.Name)
