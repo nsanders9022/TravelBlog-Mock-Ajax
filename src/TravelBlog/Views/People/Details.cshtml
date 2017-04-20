@@ -7,27 +7,21 @@
 
 
 
-<h2>Details</h2>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <hr />
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-model.Description)
-<h2>Experiences this person has had:</h2>
-@*@foreach (var personExperience in Model.PeopleExperiences)
-{
-    <h4>@personExperience.ExperienceId.</h4>
-    <p>@personExperience.Description</p>
-}*@
 
-using (var context = new TravelBlogContext())
-{
-  
-}
+<h4>Things this person has experienced:</h4>
+<table>
+    @foreach (var peopleExperience in Model.PeopleExperiences)
+    {
+        <tr>
+            <td>
+                @peopleExperience.Experience.Title
+            </td>
 
-
+        </tr>
+    }
+</table>
 
 
-
-
-
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.PersonId }) | @Html.ActionLink("Back to List", "Index")</p>
