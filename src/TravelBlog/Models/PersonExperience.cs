@@ -10,7 +10,6 @@ namespace TravelBlog.Models
     [Table("People_Experiences")]
     public class PersonExperience
     {
-        
         public int PersonId { get; set; }
         public Person Person { get; set; }
 

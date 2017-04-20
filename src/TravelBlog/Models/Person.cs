@@ -13,7 +13,6 @@ namespace TravelBlog.Models
         [Key]
         public int PersonId { get; set; }
         public string Name { get; set; }
-        public int ExperienceId { get; set; }
         public List<PersonExperience> PeopleExperiences { get; set; }
     }
 }

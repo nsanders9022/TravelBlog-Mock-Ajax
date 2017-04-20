@@ -23,6 +23,10 @@ namespace TravelBlog.Controllers
         public IActionResult Details(int id)
         {
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            ViewBag.People = db.Experiences
+                .Include(experience => experience.PeopleExperiences)
+                .ThenInclude(peopleExperiences => peopleExperiences.Person)
+                .Where(experience => experience.ExperienceId == id).ToList();
             return View(thisExperience);
         }
 
