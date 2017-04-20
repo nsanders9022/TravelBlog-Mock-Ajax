@@ -55,8 +55,6 @@ namespace TravelBlog.Migrations
 
                     b.Property<int>("ExperienceId");
 
-                    b.Property<int>("LocationId");
-
                     b.Property<string>("Name");
 
                     b.HasKey("PersonId");
@@ -64,11 +62,39 @@ namespace TravelBlog.Migrations
                     b.ToTable("People");
                 });
 
+            modelBuilder.Entity("TravelBlog.Models.PersonExperience", b =>
+                {
+                    b.Property<int>("PersonId");
+
+                    b.Property<int>("ExperienceId");
+
+                    b.HasKey("PersonId", "ExperienceId");
+
+                    b.HasIndex("ExperienceId");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("People_Experiences");
+                });
+
             modelBuilder.Entity("TravelBlog.Models.Experience", b =>
                 {
                     b.HasOne("TravelBlog.Models.Location", "Location")
                         .WithMany("Experiences")
                         .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TravelBlog.Models.PersonExperience", b =>
+                {
+                    b.HasOne("TravelBlog.Models.Experience", "Experience")
+                        .WithMany("PeopleExperiences")
+                        .HasForeignKey("ExperienceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TravelBlog.Models.Person", "Person")
+                        .WithMany("PeopleExperiences")
+                        .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

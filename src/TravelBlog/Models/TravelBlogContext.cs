@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace TravelBlog.Models
 {
@@ -27,9 +28,22 @@ namespace TravelBlog.Models
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            //base.OnModelCreating(builder);
+            modelBuilder.Entity<PersonExperience>()
+              .HasKey(t => new { t.PersonId, t.ExperienceId });
+
+            modelBuilder.Entity<PersonExperience>()
+                .HasOne(pt => pt.Person)
+                .WithMany(p => p.PeopleExperiences)
+                .HasForeignKey(pt => pt.PersonId);
+
+            modelBuilder.Entity<PersonExperience>()
+                .HasOne(pt => pt.Experience)
+                .WithMany(t => t.PeopleExperiences)
+                .HasForeignKey(pt => pt.ExperienceId);
         }
     }
 }
+
