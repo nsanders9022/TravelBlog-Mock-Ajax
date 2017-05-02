@@ -1,14 +1,14 @@
 ﻿$(document).ready(function () {
-           $('.hello-ajax').click(function () {
-               $.ajax({
-                   type: 'GET',
-                   dataType: 'html',
-                   url: $(this).data('request-url'),
-                   success: function (result) {
-                       $('#result1').html(result);
-                   }
-               });
-           });
+    $('.hello-ajax').click(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: $(this).data('request-url'),
+            success: function (result) {
+                $('#result1').html(result);
+            }
+        });
+    });
     $('.sum').click(function () {
         $.ajax({
             type: 'GET',
@@ -71,6 +71,18 @@
                 var resultMessage = 'You\'ve added a new destination to the database!<br>Id: ' + result.id + '<br>City: ' + result.city + '<br>Country: ' + result.country;
                 $('#result6').html(resultMessage);
             }
+        });
+    });
+    $('.new-person').submit(function (event) {
+        event.preventDefault();
+        $.ajax({
+            url: $(this).data('request-url'),
+            type: 'POST',
+            dataType: 'json',
+            data: $(this).serialize(),
+            success: function(data){
+            window.location.href = data;
+        }
         });
     });
 });

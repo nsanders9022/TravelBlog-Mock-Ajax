@@ -34,12 +34,21 @@ namespace TravelBlog.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult Create(Person person)
+        //{
+        //    db.People.Add(person);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
         [HttpPost]
-        public IActionResult Create(Person person)
+        public IActionResult NewPerson (string newName)
         {
-            db.People.Add(person);
+            Person newPerson = new Person(newName);
+            db.People.Add(newPerson);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return Json(Url.Action("Index", "People"));
         }
 
         public IActionResult Edit(int id)

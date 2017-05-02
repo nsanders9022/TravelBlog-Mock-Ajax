@@ -14,5 +14,12 @@ namespace TravelBlog.Models
         public int PersonId { get; set; }
         public string Name { get; set; }
         public List<PersonExperience> PeopleExperiences { get; set; }
+
+        public Person(string name, int id = 0)
+        {
+            Name = name;
+            PersonId = id;
+        }
+        public Person() { }
     }
 }

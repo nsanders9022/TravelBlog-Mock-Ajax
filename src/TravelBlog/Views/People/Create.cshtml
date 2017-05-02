@@ -7,13 +7,19 @@
 <h2>Add a person!</h2>
 <hr />
 
-@using (Html.BeginForm())
+@*@using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
 
 
     <input type="submit" value="Create" class="btn btn-default" />
-}
+}*@
+
+<form action="NewPerson" data-request-url="@Url.Action("NewPerson", "People")" class="new-person">
+    <label for="newName">name: </label>
+    <input type="text" name="newName" />
+    <button type="submit">Submit</button>
+</form>
 
 @Html.ActionLink("Back to list of People", "Index")
