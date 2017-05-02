@@ -11,19 +11,19 @@
 <div id="result1"></div>
 
 <h2>Using Parameters</h2>
-<h4 class="sum">Sum</h4>
+<h4 class="sum" data-request-url="@Url.Action("Sum")">Sum</h4>
 <div id="result2"></div>
 
 <h2>Using JSON to display an object</h2>
-<h4 class="display-object">Display object</h4>
+<h4 class="display-object" data-request-url="@Url.Action("DisplayObject")">Display object</h4>
 <div id="result3"></div>
 
 <h2>Displaying a view</h2>
-<h4 class="display-view">Display view</h4>
+<h4 class="display-view" data-request-url="@Url.Action("DisplayViewWithAjax")">Display view</h4>
 <div id="result4"></div>
 
 <h2>Using a form to make a GEt request</h2>
-<form action="RandomDestinationList" class="display-random-database-items">
+<form action="RandomDestinationList" data-request-url="@Url.Action("RandomDestinationList")" class="display-random-database-items">
     <label for="destinationCount">How many destinations would you like to see?</label>
     <input type="number" name="destinationCount"/>
     <button type="submit">Submit</button>
@@ -31,7 +31,7 @@
 <div id="result5"></div>
 
 <h2>Submitting data with a post request</h2>
-<form action="NewDestination" class="new-destination">
+<form action="NewDestination" data-request-url="@Url.Action("NewDestination")" class="new-destination">
     <label for="newCity">City: </label>
     <input type="text" name="newCity" />
     <label for="newCountry">Country: </label>

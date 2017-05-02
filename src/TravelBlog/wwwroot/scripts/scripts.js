@@ -13,7 +13,8 @@
         $.ajax({
             type: 'GET',
             data: { firstNumber: 1, secondNumber: 2 },
-            url: '@Url.Action("Sum")',
+            dataType: 'html',
+            url: $(this).data('request-url'),
             success: function (result) {
                 $('#result2').html(result);
             }
@@ -24,7 +25,7 @@
             type: 'GET',
             dataType: 'json',
             contentType: 'application/json',
-            url: '@Url.Action("DisplayObject")',
+            url: $(this).data('request-url'),
             success: function (result) {
                 var resultString = 'Id: ' + result.id + '<br>City: ' + result.city + '<br>Country: ' + result.country;
                 $('#result3').html(resultString);
@@ -35,7 +36,7 @@
         $.ajax({
             type: 'GET',
             dataType: 'html',
-            url: '@Url.Action("DisplayViewWithAjax")',
+            url: $(this).data('request-url'),
             success: function (result) {
                 $('#result4').html(result);
             }
@@ -45,7 +46,7 @@
         event.preventDefault();
         console.log($(this).serialize());
         $.ajax({
-            url: '@Url.Action("RandomDestinationList")',
+            url: $(this).data('request-url'),
             type: 'GET',
             data: $(this).serialize(),
             dataType: 'json',
@@ -62,7 +63,7 @@
     $('.new-destination').submit(function (event) {
         event.preventDefault();
         $.ajax({
-            url: '@Url.Action("NewDestination")',
+            url: $(this).data('request-url'),
             type: 'POST',
             dataType: 'json',
             data: $(this).serialize(),
