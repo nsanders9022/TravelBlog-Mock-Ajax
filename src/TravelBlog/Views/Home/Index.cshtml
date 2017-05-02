@@ -4,8 +4,42 @@
 }
 
 
-    <h1>Welcome!</h1>
+<h1>Welcome!</h1>
 
-    <p>@Html.ActionLink("List of Locations", "Index", "Locations")</p>
-    <p>@Html.ActionLink("List of Experiences", "Index", "Experiences")</p>
-    <p>@Html.ActionLink("List of People", "Index", "People")</p>
+@*<h2>Basic AJAX</h2>
+<h4 class="hello-ajax">Hello AJAX</h4>
+<div id="result1"></div>
+
+<h2>Using Parameters</h2>
+<h4 class="sum">Sum</h4>
+<div id="result2"></div>
+
+<h2>Using JSON to display an object</h2>
+<h4 class="display-object">Display object</h4>
+<div id="result3"></div>
+
+<h2>Displaying a view</h2>
+<h4 class="display-view">Display view</h4>
+<div id="result4"></div>*@
+
+<h2>Using a form to make a GEt request</h2>
+<form action="RandomDestinationList" class="display-random-database-items">
+    <label for="destinationCount">How many destinations would you like to see?</label>
+    <input type="number" name="destinationCount"/>
+    <button type="submit">Submit</button>
+</form>
+<div id="result5"></div>
+
+<h2>Submitting data with a post request</h2>
+<form action="NewDestination" class="new-destination">
+    <label for="newCity">City: </label>
+    <input type="text" name="newCity" />
+    <label for="newCountry">Country: </label>
+    <input type="text" name="newCountry" />
+    <button type="submit">Submit</button>
+</form>
+<div id="result6"></div>
+
+<p>@Html.ActionLink("List of Locations", "Index", "Locations")</p>
+<p>@Html.ActionLink("List of Experiences", "Index", "Experiences")</p>
+<p>@Html.ActionLink("List of People", "Index", "People")</p>

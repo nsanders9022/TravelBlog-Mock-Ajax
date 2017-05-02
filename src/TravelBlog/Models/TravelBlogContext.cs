@@ -18,6 +18,7 @@ namespace TravelBlog.Models
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<PersonExperience> PeopleExperiences { get; }
+        public DbSet<Destination> Destinations { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
