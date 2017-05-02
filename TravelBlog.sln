@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TravelBlog", "src\TravelBlog\TravelBlog.xproj", "{845E1D3A-FE39-4C3D-80B8-5D3D6904E3B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{81C985C3-9E5F-4956-87E3-E2394BFC0D94}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TravelBlog.Tests", "TravelBlog.Tests\TravelBlog.Tests.xproj", "{71ED0909-D6B1-47C2-A795-24CE19F744B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,17 @@ Global
 		{845E1D3A-FE39-4C3D-80B8-5D3D6904E3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845E1D3A-FE39-4C3D-80B8-5D3D6904E3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845E1D3A-FE39-4C3D-80B8-5D3D6904E3B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71ED0909-D6B1-47C2-A795-24CE19F744B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71ED0909-D6B1-47C2-A795-24CE19F744B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71ED0909-D6B1-47C2-A795-24CE19F744B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71ED0909-D6B1-47C2-A795-24CE19F744B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{845E1D3A-FE39-4C3D-80B8-5D3D6904E3B9} = {D35D7EB7-36F8-4AB6-8094-C62ABB0AC505}
+		{81C985C3-9E5F-4956-87E3-E2394BFC0D94} = {97E43B71-E83B-4EE7-947B-EA7B1B3B4C3A}
+		{71ED0909-D6B1-47C2-A795-24CE19F744B2} = {81C985C3-9E5F-4956-87E3-E2394BFC0D94}
 	EndGlobalSection
 EndGlobal

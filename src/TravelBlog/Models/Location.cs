@@ -19,5 +19,23 @@ namespace TravelBlog.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public virtual ICollection<Experience> Experiences { get; set; }
+
+        public override bool Equals(System.Object otherItem)
+        {
+            if (!(otherItem is Location))
+            {
+                return false;
+            }
+            else
+            {
+                Location newItem = (Location)otherItem;
+                return this.LocationId.Equals(newItem.LocationId);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.LocationId.GetHashCode();
+        }
     }
 }
