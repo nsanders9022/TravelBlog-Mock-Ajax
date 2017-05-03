@@ -11,6 +11,18 @@ namespace TravelBlog.Models
     {
         TravelBlogContext db = new TravelBlogContext();
 
+        public EFLocationRepository(TravelBlogContext connection = null)
+        {
+            if (connection == null)
+            {
+                this.db = new TravelBlogContext();
+            }
+            else
+            {
+                this.db = connection;
+            }
+        }
+
         public IQueryable<Location> Locations
         { get { return db.Locations; } }
 

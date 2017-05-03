@@ -14,6 +14,7 @@ namespace TravelBlog.Tests.ControllerTests
     {
 
         Mock<ILocationRepository> mock = new Mock<ILocationRepository>();
+        EFLocationRepository db = new EFLocationRepository(new TestDbContext());
 
         private void DbSetup()
         {
@@ -68,6 +69,23 @@ namespace TravelBlog.Tests.ControllerTests
 
             var collection = indexView.ViewData.Model as IEnumerable<Location>;
 
+            Assert.Contains<Location>(testLocation, collection);
+        }
+
+        [Fact]
+        public void DB_CreateNewEntry_Test()
+        {
+            // Arrange
+            LocationsController controller = new LocationsController(db);
+            Location testLocation = new Location();
+            testLocation.Description = "TestDb Location";
+            testLocation.Name = "TestDb Name";
+
+            // Act
+            controller.Create(testLocation);
+            var collection = (controller.Index() as ViewResult).ViewData.Model as IEnumerable<Location>;
+
+            // Assert
             Assert.Contains<Location>(testLocation, collection);
         }
     }

@@ -17,5 +17,14 @@ namespace TravelBlog.Models
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
         public List<PersonExperience> PeopleExperiences { get; set; }
+
+        public Experience(string title, string description, int locationId, int id = 0)
+        {
+            Title = title;
+            Description = description;
+            LocationId = locationId;
+            ExperienceId = id;
+        }
+        public Experience() { }
     }
 }
