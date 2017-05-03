@@ -10,11 +10,16 @@ using Moq;
 
 namespace TravelBlog.Tests.ControllerTests
 {
-    public class LocationsControllerTest
+    public class LocationsControllerTest : IDisposable
     {
 
         Mock<ILocationRepository> mock = new Mock<ILocationRepository>();
         EFLocationRepository db = new EFLocationRepository(new TestDbContext());
+
+        public void Dispose()
+        {
+            db.DeleteAll();
+        }
 
         private void DbSetup()
         {

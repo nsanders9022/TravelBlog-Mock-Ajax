@@ -45,5 +45,10 @@ namespace TravelBlog.Models
             db.Locations.Remove(location);
             db.SaveChanges();
         }
+
+        public void DeleteAll()
+        {
+            db.Database.ExecuteSqlCommand("delete from Locations");
+        }
     }
 }
